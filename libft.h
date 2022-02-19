@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:39:46 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/20 01:42:24 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/20 03:59:55 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
