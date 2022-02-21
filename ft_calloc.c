@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:28:53 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/20 02:48:29 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/20 22:33:48 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*s;
-
+	
 	s = malloc(count * size);
 	if (!s)
 		return (0);

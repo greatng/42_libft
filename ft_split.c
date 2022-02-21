@@ -6,13 +6,13 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:07:19 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/18 21:05:47 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:42:48 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	char	*ft_word(char const *s, char c, char **split, size_t i)
+static	void	ft_word(char const *s, char c, char **split, size_t i)
 {
 	size_t	pos;
 
@@ -21,7 +21,7 @@ static	char	*ft_word(char const *s, char c, char **split, size_t i)
 		pos++;
 	split[i] = malloc(sizeof(char) * pos);
 	if (!split[i])
-		return (0);
+		return ;
 	pos = 0;
 	while (s[pos] && s[pos] != c)
 	{
@@ -29,7 +29,7 @@ static	char	*ft_word(char const *s, char c, char **split, size_t i)
 		pos++;
 	}
 	split[i][pos] = '\0';
-	return (split[i]);
+	return ;
 }
 
 static	char	*ft_wordstart(char const *s, char c, size_t n)
@@ -69,18 +69,22 @@ static	size_t	ft_count(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
+	char	*cur;
 	size_t	n;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	n = ft_count(s, c) + 1;
 	split = malloc(sizeof(char *) * (n));
 	if (!split)
 		return (0);
 	i = 0;
+	cur = (char *)s;
 	while (i < n - 1)
 	{
-		s = ft_wordstart(s, c, i);
-		split[i] = ft_word(s, c, split, i);
+		cur = ft_wordstart(cur, c, i);
+		ft_word(cur, c, split, i);
 		if (!split[i])
 			return (0);
 		i++;
