@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:07:19 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/21 16:42:48 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:47:35 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	void	ft_word(char const *s, char c, char **split, size_t i)
 	pos = 0;
 	while (s[pos] && s[pos] != c)
 		pos++;
-	split[i] = malloc(sizeof(char) * pos);
+	split[i] = malloc(sizeof(char) * (pos + 1));
 	if (!split[i])
 		return ;
 	pos = 0;
@@ -28,23 +28,24 @@ static	void	ft_word(char const *s, char c, char **split, size_t i)
 		split[i][pos] = s[pos];
 		pos++;
 	}
+	s += pos;
 	split[i][pos] = '\0';
 	return ;
 }
 
-static	char	*ft_wordstart(char const *s, char c, size_t n)
+static	char	*ft_wordstart(char const *s, char c, size_t ln)
 {
 	size_t	i;
 
-	i = 1;
-	while (s[i - 1] == c && s[i] == c)
+	i = 0;
+	while (s[i] == c && s[i + 1] == c)
 		i++;
 	while (s[i])
 	{
-		if (n == 0 && s[i - 1] != c && i == 1)
-			return ((char *)&s[i - 1]);
-		if ((s[i - 1] == c && s[i] != c))
+		if (ln == 0 && s[i] != c && i == 0)
 			return ((char *)&s[i]);
+		if ((s[i] == c && s[i + 1] != c))
+			return ((char *)&s[i + 1]);
 		i++;
 	}
 	return ((char *)s);
@@ -75,13 +76,14 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	n = ft_count(s, c) + 1;
-	split = malloc(sizeof(char *) * (n));
+	n = ft_count(s, c);
+	split = malloc(sizeof(char *) * (n + 1));
 	if (!split)
 		return (0);
+	split[n] = NULL;
 	i = 0;
 	cur = (char *)s;
-	while (i < n - 1)
+	while (i < n)
 	{
 		cur = ft_wordstart(cur, c, i);
 		ft_word(cur, c, split, i);
@@ -89,6 +91,5 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		i++;
 	}
-	split[i] = 0;
 	return (split);
 }
