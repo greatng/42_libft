@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:08:12 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/18 21:57:20 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:41:48 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static	size_t	ft_checklength(long int n)
 		i++;
 		div = div * 10;
 	}
+	if (n == 0)
+		i = 1;
 	return (i);
 }
 

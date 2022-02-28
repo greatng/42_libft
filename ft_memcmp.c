@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:28:30 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/17 19:53:48 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:46:25 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
 	while (*str1 == *str2 && i < n)
 	{
 		str1++;
