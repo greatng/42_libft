@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 00:47:00 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/18 14:01:08 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:35:41 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ static size_t	ft_getlast(char const *s1, char const *set)
 	while (s1[i])
 	{
 		if (ft_checkset(s1[i], set))
+		{
+			if (i == 0)
+				return (i);
 			i--;
+		}
 		else
 			return (i);
 	}
