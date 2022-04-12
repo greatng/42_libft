@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 22:49:13 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/04/12 20:33:13 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/04/12 20:35:44 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ft_putnbr_fd(int n, int fd)
 		nbr = nbr * (-1);
 		write(fd, "-", 1);
 	}
-	c = (nbr % 10) + 48;
+	c = nbr % 10;
 	nbr = nbr / 10;
 	if (nbr)
 		ft_putnbr_fd(nbr, fd);
-	write(fd, &c, 1);
+	write(fd, &"0123456789"[c], 1);
 }
