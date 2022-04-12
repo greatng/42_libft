@@ -6,7 +6,7 @@
 /*   By: pngamcha <pngamcha@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 22:49:13 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/04/12 20:35:44 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/04/12 20:37:07 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	nbr;
-	char		c;
+	int		c;
 
 	nbr = n;
 	if (nbr < 0)
