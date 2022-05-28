@@ -30,23 +30,23 @@ all: $(NAME)
 $(NAME): $(SOURCE_O)
 	@echo "$(BLUE)Adding to library...$(NORMAL)"
 	@ar rc $(NAME) $(SOURCE_O) $?
-	@echo "$(GREEN)Successfully added to library!"
+	@echo "$(GREEN)Successfully added to library!$(NORMAL)"
 
 clean:
 	@echo "$(RED)Removing all object files...$(NORMAL)"
 	@/bin/rm -f $(SOURCE_O) $(BONUS_O)
-	@echo "$(GREEN)Succesfully removed all object files!"
+	@echo "$(GREEN)Succesfully removed all object files!$(NORMAL)"
 
 fclean: clean
 	@echo "$(RED)Removing libft.a...$(NORMAL)"
 	@/bin/rm -f $(NAME)
-	@echo "$(GREEN)Successfully removed libft.a!"
+	@echo "$(GREEN)Successfully removed libft.a!$(NORMAL)"
 
 re: fclean all
 
 bonus: $(NAME) $(BONUS_O)
 	@echo "$(BLUE)Adding to library...$(NORMAL)"
 	@ar rc $(NAME) $(BONUS_O) $?
-	@echo "$(GREEN)Succesfully added to library!"
+	@echo "$(GREEN)Succesfully added to library!$(NORMAL)"
 
 .PHONY: all clean fclean re bonus
