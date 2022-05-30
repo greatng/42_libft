@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pngamcha <pngamcha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pngamcha <pngamcha@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:49:14 by pngamcha          #+#    #+#             */
-/*   Updated: 2022/02/20 02:43:59 by pngamcha         ###   ########.fr       */
+/*   Updated: 2022/05/30 22:57:07 by pngamcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
